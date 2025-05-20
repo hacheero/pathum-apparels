@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pathum Apparels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Pathum Apparels</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Cart 🛒 <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome to Pathum Apparels!</h2>
+    <p>This is your first webpage.</p>
+  </main>
+
+  <script>
+    let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cartCount;
+  </script>
+</body>
+</html>

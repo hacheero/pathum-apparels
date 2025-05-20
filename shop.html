@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop - Pathum Apparels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Pathum Apparels</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Cart 🛒 <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="products">
+      <h2>Our Products</h2>
+
+      <div class="product">
+        <h3>Premium T-Shirt</h3>
+        <p>Rs. 2500</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <h3>Stylish Hoodie</h3>
+        <p>Rs. 4500</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <h3>Cool Cap</h3>
+        <p>Rs. 1500</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <h3>Elegant Jacket</h3>
+        <p>Rs. 6000</p>
+        <button>Add to Cart</button>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    // Load saved cart count or start at 0
+    let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+
+    const cartCountElement = document.getElementById('cart-count');
+    const addToCartButtons = document.querySelectorAll('.product button');
+
+    // Show saved cart count on page load
+    cartCountElement.textContent = cartCount;
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        cartCount++;
+        cartCountElement.textContent = cartCount;
+        localStorage.setItem('cartCount', cartCount); // Save count
+      });
+    });
+  </script>
+</body>
+</html>
